@@ -10,12 +10,13 @@ end
 module PolyMath
 
 	def self.calcApothemWithRadius(radius, sides)
-		ang1 = 180 / sides
+		ang1 = 180.to_d / sides
+		puts "ang1 is: #{ang1}"
 		apothem = radius * Math.cos(ang1.degrees_to_radians)
 	end
 
 	def self.calcPerimeterWithRadius(radius, sides)
-		ang1 = 180 / sides
+		ang1 = 180.to_d / sides
 		twoRadius = radius * 2
 		sinAng1 = Math.sin(ang1.degrees_to_radians)
 		sideLength = twoRadius * sinAng1
@@ -25,22 +26,8 @@ module PolyMath
 	def self.findAreaWithRadius(radius, sides)
 
 		apothem = calcApothemWithRadius(radius, sides).to_d
-		puts "apothem is: #{apothem}"
-
-		apothemIsBigDec = apothem.is_a? BigDecimal
-		puts apothemIsBigDec ? "apothem is a BigDecimal" : "apothem is not a BigDecimal"
-
 		perimeter = calcPerimeterWithRadius(radius, sides).to_d
-		puts "perimeter is: #{perimeter}"
-
-		perimeterIsBigDec = perimeter.is_a? BigDecimal
-		puts perimeterIsBigDec ? "perimeter is a BigDecimal" : "perimeter is not a BigDecimal"
-
 		area = (apothem * perimeter) / 2
-		puts "area is: #{area}"
-
-		areaIsBigDec = area.is_a? BigDecimal
-		puts areaIsBigDec ? "area is a BigDecimal" : "area is not a BigDecimal"
 
 		return area
 	end

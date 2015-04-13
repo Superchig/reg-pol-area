@@ -1,2 +1,4 @@
 *.swp
-*~
+*.rb~
+rakefile~
+.gitignore~
