@@ -32,11 +32,13 @@ module PolyMath
 	end
 
 	def self.findAreaWithRadius(radius, sides)
-
 		apothem = calcApothemWithRadius(radius, sides).to_d
 		perimeter = calcPerimeterWithRadius(radius, sides).to_d
 		area = (apothem * perimeter) / 2
+	end
 
-		return area
+	def self.findAreaWithApothem(apothem, sides)
+		perimeter = calcPerimeterWithApothem(apothem, sides).to_d
+		area = (apothem * perimeter) / 2
 	end
 end

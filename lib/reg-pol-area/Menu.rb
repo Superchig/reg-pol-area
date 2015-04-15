@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require_relative 'PolyMath'
 
 module Menu
@@ -5,26 +7,53 @@ module Menu
 		puts "Welcome to an area-of-regular-polygon calculator. What values do you know?\n"
 
 		puts "1. Radius and number of sides."
-		puts "2. Exit"
+		puts "2. Apothem and number of sides."
+		puts "3. Exit"
 
-		puts "\nI realize that exit is not a value that belongs to a regular polygon. \n"
+		puts "I realize that exit is not a value that belongs to a regular polygon.\n"
+
+		puts ""
+
+		print "Input choice> "
 	end
 
 	def self.evalChoice(choice)
+		unicode_squared = "\U+00B2"
+		unicode_squared = unicode_squared.encode('utf-8')
 		case choice
 		when '1'
-			print "\nPlease input the radius> "
+			print "Please input the radius> "
 			radius = gets.chomp.to_i
 
-			print "\nPlease input the number of sides> "
+			puts ""
+
+			print "Please input the number of sides> "
 			sides = gets.chomp.to_i
+
+			puts ""
 
 			answer = PolyMath.findAreaWithRadius(radius, sides).to_f
 			answer = answer.round(2)
 
-			puts "\nThis regular polygon is approximately #{answer} units^2"
+			puts "\nThis regular polygon is approximately #{answer} units" << unicode_squared
 			true
 		when '2'
+			print "Please input the apothem> "
+			apothem = gets.chomp.to_i
+
+			puts ""
+
+			print "Please input the number of sides>"
+			sides= gets.chomp.to_i
+
+			puts ""
+
+			answer = PolyMath.findAreaWithApothem(apothem, sides).to_f
+			answer = answer.round(2)
+
+			puts "\nThis regular polygon is approximately #{answer} units" << unicode_squared
+			true
+		when '3'
 			puts "\nExiting..."
 			false
 		else

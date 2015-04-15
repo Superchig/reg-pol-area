@@ -3,9 +3,10 @@ require 'rake/testtask'
 task default: %w[test]
 
 Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.test_files = FileList['test/test_*.rb']
-  t.loader = :direct
+  t.libs << "lib"
+  t.test_files = FileList['test/*.rb']
+  t.loader = :rake
+  t.verbose = true
 end
 
 task :run do
