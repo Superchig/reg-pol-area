@@ -1,9 +1,0 @@
-task default: %w[run]
-
-task :test do
-  ruby "test/radius_test.rb"
-end
-
-task :run do
-  ruby "App.rb"
-end
