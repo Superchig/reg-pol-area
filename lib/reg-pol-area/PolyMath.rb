@@ -41,4 +41,14 @@ module PolyMath
 		perimeter = calcPerimeterWithApothem(apothem, sides).to_d
 		area = (apothem * perimeter) / 2
 	end
+
+	def self.findAreaWithSide(sideLength, sides)
+		dividend = sideLength**2 * sides
+		puts "dividend is: #{dividend}"
+		ang1 = 180.to_d / sides
+		divisor = 4 * Math.tan((ang1).degrees_to_radians)
+		puts "divisor is: #{divisor}"
+		area = dividend / divisor
+		area.to_d
+	end
 end
