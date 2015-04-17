@@ -35,7 +35,7 @@ module Menu
 			answer = PolyMath.findAreaWithRadius(radius, sides).to_f
 			answer = answer.round(2)
 
-			puts "\nThis regular polygon is approximately #{answer} units" << unicode_squared
+			puts "\nThis regular polygon is approximately #{answer} units^2"
 			true
 		when '2'
 			print "Please input the apothem> "
@@ -43,7 +43,7 @@ module Menu
 
 			puts ""
 
-			print "Please input the number of sides>"
+			print "Please input the number of sides> "
 			sides= gets.chomp.to_i
 
 			puts ""
@@ -51,7 +51,7 @@ module Menu
 			answer = PolyMath.findAreaWithApothem(apothem, sides).to_f
 			answer = answer.round(2)
 
-			puts "\nThis regular polygon is approximately #{answer} units" << unicode_squared
+			puts "\nThis regular polygon is approximately #{answer} units^2"
 			true
 		when '3'
 			puts "\nExiting..."
